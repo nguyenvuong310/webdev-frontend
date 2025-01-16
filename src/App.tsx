@@ -7,10 +7,6 @@ import PageTitle from './components/PageTitle';
 import Chart from './pages/Chart';
 import ECommerce from './pages/Dashboard/ECommerce';
 
-import Settings from './pages/Settings';
-
-import Alerts from './pages/UiElements/Alerts';
-import Buttons from './pages/UiElements/Buttons';
 import DefaultLayout from './layout/DefaultLayout';
 import SearchScores from './pages/SearchScore';
 

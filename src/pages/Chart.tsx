@@ -1,27 +1,37 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
 
-import ChartThree from '../components/Charts/ChartThree';
-import ChartTwo from '../components/Charts/ChartTwo';
+import ChartCirCle from '../components/Charts/ChartCircle';
+import ChartBar from '../components/Charts/ChartBar';
+import Select from 'react-select';
+import { getChart } from '../api/score.api';
+
+const subjectOptions = [
+  { value: 'math', label: 'Math' },
+  { value: 'literature', label: 'Literature' },
+  { value: 'language', label: 'Language' },
+  { value: 'physics', label: 'Physics' },
+  { value: 'chemistry', label: 'Chemistry' },
+  { value: 'biology', label: 'Biology' },
+  { value: 'history', label: 'History' },
+  { value: 'geography', label: 'Geography' },
+  { value: 'civic_education', label: 'Civic Education' },
+];
 
 const Chart: React.FC = () => {
+  const [selectedOption, setSelectedOption] = useState(subjectOptions[0]);
+
   return (
     <>
       <Breadcrumb pageName="Chart" />
 
       <div className="relative z-20 inline-block">
-        <select
-          name="#"
-          id="#"
-          className="relative z-20 inline-flex appearance-none bg-transparent py-1 pl-3 pr-8 text-sm font-medium outline-none"
-        >
-          <option value="" className="dark:bg-boxdark">
-            This Week
-          </option>
-          <option value="" className="dark:bg-boxdark">
-            Last Week
-          </option>
-        </select>
+        <Select
+          defaultValue={selectedOption}
+          onChange={setSelectedOption}
+          options={subjectOptions}
+          className="w-56 sm:w-64 md:w-72 py-2"
+        />
         <span className="absolute top-1/2 right-3 z-10 -translate-y-1/2">
           <svg
             width="10"
@@ -44,8 +54,8 @@ const Chart: React.FC = () => {
         </span>
       </div>
       <div className="grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5">
-        <ChartTwo />
-        <ChartThree />
+        <ChartBar subject={selectedOption.value} />
+        <ChartCirCle subject={selectedOption.value} />
       </div>
     </>
   );
