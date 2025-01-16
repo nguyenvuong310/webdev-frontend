@@ -105,7 +105,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                   to="/"
                   className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-black duration-300 ease-in-out hover:bg-[#242A36] hover:text-[#FFFFFF] dark:hover:bg-meta-4 ${
                     (pathname === '/' || pathname.includes('dashboard')) &&
-                    'bg-[#242A36] text-[#FFFFFF] dark:bg-meta-4'
+                    'bg-[#242A36] text-white dark:bg-meta-4'
                   }`}
                 >
                   <svg

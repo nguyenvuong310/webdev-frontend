@@ -1,5 +1,5 @@
 import { ApexOptions } from 'apexcharts';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Chart from 'react-apexcharts';
 
 const options: ApexOptions = {
@@ -85,9 +85,22 @@ const ChartTwo: React.FC = () => {
     }));
   };
   handleReset;
+  const [parentWidth, setWidth] = useState(0);
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((event) => {
+      // Depending on the layout, you may need to swap inlineSize with blockSize
+      // https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserverEntry/contentBoxSize
+      setWidth(event[0].contentBoxSize[0].inlineSize);
+      // setHeight(event[0].contentBoxSize[0].blockSize);
+    });
 
+    resizeObserver.observe(document.getElementById('barChart'));
+  });
   return (
-    <div className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-6">
+    <div
+      id="barChart"
+      className="col-span-12 rounded-sm border border-stroke bg-white p-7.5 shadow-default dark:border-strokedark dark:bg-boxdark xl:col-span-6 "
+    >
       <div className="mb-4 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-xl font-semibold text-black dark:text-white">
@@ -102,7 +115,7 @@ const ChartTwo: React.FC = () => {
             options={options}
             series={state.series}
             type="bar"
-            width={500}
+            width={parentWidth}
             height={320}
           />
         </div>
