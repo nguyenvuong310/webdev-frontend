@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import SidebarLinkGroup from './SidebarLinkGroup';
+
 import Logo from '../../images/logo/logo.svg';
 
 interface SidebarProps {
@@ -58,15 +58,17 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-[linear-gradient(to_bottom,_#FFD24D,_#568D68)] duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
-      <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-        <NavLink to="/">
-          <img src={Logo} alt="Logo" />
-        </NavLink>
+      <div className=" px-6 py-5.5 lg:py-6.5 bg-[#0f2289]">
+        <div className="flex items-center justify-center">
+          <NavLink to="/">
+            <span className="font-semibold text-lg text-white">G-Score</span>
+          </NavLink>
+        </div>
 
         <button
           ref={trigger}
@@ -101,9 +103,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/"
-                  className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                  className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-black duration-300 ease-in-out hover:bg-[#242A36] hover:text-[#FFFFFF] dark:hover:bg-meta-4 ${
                     (pathname === '/' || pathname.includes('dashboard')) &&
-                    'bg-graydark dark:bg-meta-4'
+                    'bg-[#242A36] text-[#FFFFFF] dark:bg-meta-4'
                   }`}
                 >
                   <svg
@@ -138,10 +140,12 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/search-score"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('search-score') &&
-                    'bg-graydark dark:bg-meta-4'
-                  }`}
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black duration-300 ease-in-out 
+                    ${
+                      pathname.includes('search-score')
+                        ? 'bg-[#242A36] text-white'
+                        : 'hover:bg-[#242A36] hover:text-white'
+                    }`}
                 >
                   <svg
                     className="fill-current"
@@ -163,9 +167,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               <li>
                 <NavLink
                   to="/chart"
-                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('chart') && 'bg-graydark dark:bg-meta-4'
-                  }`}
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-black duration-300 ease-in-out 
+                    hover:bg-[#242A36] hover:text-white dark:hover:bg-meta-4 
+                    ${
+                      pathname.includes('chart')
+                        ? 'bg-[#242A36] text-white dark:bg-meta-4'
+                        : ''
+                    }`}
                 >
                   <svg
                     className="fill-current"

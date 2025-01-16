@@ -190,6 +190,13 @@ const ChartOne: React.FC = () => {
             type="area"
             height={350}
           />
+          <ReactApexChart
+            options={options}
+            series={state.series}
+            type="bar"
+            width={500}
+            height={320}
+          />
         </div>
       </div>
     </div>
