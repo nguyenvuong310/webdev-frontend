@@ -132,7 +132,7 @@ const ChartBar: React.FC<ChartBarProps> = ({ subject }) => {
       <div className="mb-4 justify-between gap-4 sm:flex">
         <div>
           <h4 className="text-xl font-semibold text-black dark:text-white">
-            Profit this week
+            Bar Chart: Statistics of {subject}
           </h4>
         </div>
       </div>

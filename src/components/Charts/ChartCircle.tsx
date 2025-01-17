@@ -72,7 +72,7 @@ const ChartCircle: React.FC<ChartCircleProps> = ({ subject }) => {
       <div className="mb-3 justify-between gap-4 sm:flex">
         <div>
           <h5 className="text-xl font-semibold text-black dark:text-white">
-            Visitors Analytics
+            Circle Chart: Statistics of {subject}
           </h5>
         </div>
       </div>
@@ -89,7 +89,7 @@ const ChartCircle: React.FC<ChartCircleProps> = ({ subject }) => {
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-primary"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
               <span> {labels[0]} </span>
-              <span> 65% </span>
+              <span> {values[0]}% </span>
             </p>
           </div>
         </div>
@@ -98,7 +98,7 @@ const ChartCircle: React.FC<ChartCircleProps> = ({ subject }) => {
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#6577F3]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
               <span> {labels[1]} </span>
-              <span> 34% </span>
+              <span> {values[1]}% </span>
             </p>
           </div>
         </div>
@@ -107,7 +107,7 @@ const ChartCircle: React.FC<ChartCircleProps> = ({ subject }) => {
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#8FD0EF]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
               <span> {labels[2]}</span>
-              <span> 45% </span>
+              <span> {values[2]}% </span>
             </p>
           </div>
         </div>
@@ -116,7 +116,7 @@ const ChartCircle: React.FC<ChartCircleProps> = ({ subject }) => {
             <span className="mr-2 block h-3 w-full max-w-3 rounded-full bg-[#0FADCF]"></span>
             <p className="flex w-full justify-between text-sm font-medium text-black dark:text-white">
               <span> {labels[3]} </span>
-              <span> 12% </span>
+              <span> {values[3]}% </span>
             </p>
           </div>
         </div>
