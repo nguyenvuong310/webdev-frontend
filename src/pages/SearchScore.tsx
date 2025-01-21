@@ -27,7 +27,7 @@ const SearchScores = () => {
     if (reposone.status !== 200) {
       setIsLoaded(false);
     }
-    const data: IScore = reposone.data.data;
+    const data: IScore = reposone.data;
     setIsLoaded(true);
     setScore(data);
   }

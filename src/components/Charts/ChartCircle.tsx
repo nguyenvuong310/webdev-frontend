@@ -14,7 +14,7 @@ const ChartCircle: React.FC<ChartCircleProps> = ({ subject }) => {
     const fetchData = async (typeName: string) => {
       try {
         const response = await getChart(ChartType.CIRCLE, typeName);
-        const data = response.data.data;
+        const data = response.data;
         setValues(data.values);
         setLabels(data.labels);
       } catch (error) {

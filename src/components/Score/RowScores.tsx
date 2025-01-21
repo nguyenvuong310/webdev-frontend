@@ -10,9 +10,7 @@ export const RowScores = ({ score, typeName }: RowScoresProps) => {
   return (
     <>
       <div className="items-center justify-center p-2.5 xl:p-5 min-w-32">
-        <p className="text-black dark:text-white">
-          {score.studentRegistrationNo}
-        </p>
+        <p className="text-black dark:text-white">{score.student}</p>
       </div>
       {typeName === GroupType.A00 ? (
         <>

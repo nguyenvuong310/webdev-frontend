@@ -1,5 +1,5 @@
 export type IScore = {
-  studentRegistrationNo: string;
+  student: string;
   math: number | null;
   literature: number | null;
   language: number | null;

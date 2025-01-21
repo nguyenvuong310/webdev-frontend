@@ -1,18 +1,18 @@
 import instance from './axios';
 
 export const getScores = async (id: string) => {
-  const response = await instance.get(`/scores/${id}`);
+  const response = await instance.get(`/scores/${id}/`);
   return response;
 };
 
 export const getTop10Scores = async (type: string) => {
-  const response = await instance.get(`/scores/students/top10?type=${type}`);
+  const response = await instance.get(`/scores/top10/${type}/`);
   return response;
 };
 
 export const getChart = async (typeChart: string, typeSubject: string) => {
   const response = await instance.get(
-    `/scores/subject/chart?typeChart=${typeChart}&&typeSubject=${typeSubject}`,
+    `/scores/chart/${typeChart}/${typeSubject}/`,
   );
   return response;
 };

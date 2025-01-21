@@ -14,7 +14,7 @@ const TableScore: React.FC<TableScoreProps> = ({ GroupName, typeName }) => {
     const fetchData = async (typeName: string) => {
       try {
         const response = await getTop10Scores(typeName);
-        const data: IScore[] = response.data.data;
+        const data: IScore[] = response.data;
         setScores(data);
       } catch (error) {
         console.error('Error fetching data:', error);

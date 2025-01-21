@@ -4,7 +4,6 @@ import Breadcrumb from '../components/Breadcrumbs/Breadcrumb';
 import ChartCirCle from '../components/Charts/ChartCircle';
 import ChartBar from '../components/Charts/ChartBar';
 import Select from 'react-select';
-import { getChart } from '../api/score.api';
 
 const subjectOptions = [
   { value: 'math', label: 'Math' },
@@ -15,7 +14,7 @@ const subjectOptions = [
   { value: 'biology', label: 'Biology' },
   { value: 'history', label: 'History' },
   { value: 'geography', label: 'Geography' },
-  { value: 'civic_education', label: 'Civic Education' },
+  { value: 'civics', label: 'civics' },
 ];
 
 const Chart: React.FC = () => {

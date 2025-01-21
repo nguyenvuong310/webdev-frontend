@@ -21,7 +21,7 @@ const ChartBar: React.FC<ChartBarProps> = ({ subject }) => {
     const fetchData = async (typeName: string) => {
       try {
         const response = await getChart(ChartType.BAR, typeName);
-        const data = response.data.data;
+        const data = response.data;
         setValues(data.values);
         setLabels(data.labels);
       } catch (error) {
